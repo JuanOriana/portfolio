@@ -17,7 +17,7 @@ const LogoBox = styled.span`
 `;
 
 const Logo = () => {
-  const footPrintImg = `/images/footprint${useColorModeValue("", "-dark")}.png`;
+  const footPrintImg = `/images/chicken${useColorModeValue("", "-dark")}.png`;
 
   return (
     <Link href="/">

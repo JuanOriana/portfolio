@@ -53,7 +53,7 @@ const Navbar = (props) => {
       <Container
         display="flex"
         p={2}
-        maxW="container.lg"
+        maxW="container.md"
         wrap="wrap"
         align="center"
         justify="space-between"
@@ -102,11 +102,7 @@ const Navbar = (props) => {
                   <MenuItem as={Link}>About</MenuItem>
                 </NextLink>
                 <MenuDivider />
-                <MenuItem
-                  as={Link}
-                  href="https://github.com/mylink"
-                  icon={<IoLogoGithub />}
-                >
+                <MenuItem as={Link} href="https://github.com/mylink">
                   View Source
                 </MenuItem>
               </MenuList>

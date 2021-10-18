@@ -1,5 +1,5 @@
 import React from "react";
-import { ChakraProvider } from "@chakra-ui/provider";
+import { ChakraProvider } from "@chakra-ui/react";
 import Layout from "../components/layouts/Main";
 import Fonts from "../components/Fonts";
 import theme from "../lib/theme";

@@ -11,6 +11,7 @@ import {
   MenuItem,
   MenuList,
   MenuButton,
+  MenuDivider,
   IconButton,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -52,7 +53,7 @@ const Navbar = (props) => {
       <Container
         display="flex"
         p={2}
-        maxW="container.md"
+        maxW="container.lg"
         wrap="wrap"
         align="center"
         justify="space-between"
@@ -100,7 +101,12 @@ const Navbar = (props) => {
                 <NextLink href="/" passHref>
                   <MenuItem as={Link}>About</MenuItem>
                 </NextLink>
-                <MenuItem as={Link} href="https://github.com/mylink">
+                <MenuDivider />
+                <MenuItem
+                  as={Link}
+                  href="https://github.com/mylink"
+                  icon={<IoLogoGithub />}
+                >
                   View Source
                 </MenuItem>
               </MenuList>

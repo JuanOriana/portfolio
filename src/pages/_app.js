@@ -2,10 +2,11 @@ import React from "react";
 import { ChakraProvider } from "@chakra-ui/provider";
 import Layout from "../components/layouts/Main";
 import Fonts from "../components/Fonts";
+import theme from "../lib/theme";
 
 const Website = ({ Component, pageProps, router }) => {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Fonts />
       <Layout router={router}>
         <Component {...pageProps} key={router.route} />

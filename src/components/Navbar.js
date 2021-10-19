@@ -19,21 +19,34 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./ThemeToggleButton";
 import { IoLogoGithub } from "react-icons/io5";
 
-const LinkItem = ({ href, path, _target, children, ...props }) => {
+const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href;
   const inactiveColor = useColorModeValue("gray200", "whiteAlpha.900");
+  if (target !== "_blank") {
+    return (
+      <NextLink href={href} passHref>
+        <Link
+          p={2}
+          bg={active ? "grassTeal" : undefined}
+          color={active ? "#202023" : inactiveColor}
+          {...props}
+        >
+          {children}
+        </Link>
+      </NextLink>
+    );
+  }
   return (
-    <NextLink href={href} passHref>
-      <Link
-        p={2}
-        bg={active ? "grassTeal" : undefined}
-        color={active ? "#202023" : inactiveColor}
-        _target={_target}
-        {...props}
-      >
-        {children}
-      </Link>
-    </NextLink>
+    <Link
+      p={2}
+      bg={active ? "grassTeal" : undefined}
+      color={active ? "#202023" : inactiveColor}
+      href={href}
+      target="_blank"
+      {...props}
+    >
+      {children}
+    </Link>
   );
 };
 
@@ -73,8 +86,18 @@ const Navbar = (props) => {
           mt={{ base: 4, md: 0 }}
         >
           <LinkItem
-            _target="_blank"
-            href="https://github.com/mylink"
+            href="/projects"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+            style={{ gap: 4 }}
+            pl={2}
+          >
+            Projects
+          </LinkItem>
+          <LinkItem
+            target="_blank"
+            href="https://github.com/JuanOriana/portfolio"
             path={path}
             display="inline-flex"
             alignItems="center"
@@ -101,8 +124,15 @@ const Navbar = (props) => {
                 <NextLink href="/" passHref>
                   <MenuItem as={Link}>About</MenuItem>
                 </NextLink>
+                <NextLink href="/projects" passHref>
+                  <MenuItem as={Link}>Projects</MenuItem>
+                </NextLink>
                 <MenuDivider />
-                <MenuItem as={Link} href="https://github.com/mylink">
+                <MenuItem
+                  as={Link}
+                  href="https://github.com/JuanOriana/portfolio"
+                  icon={<IoLogoGithub />}
+                >
                   View Source
                 </MenuItem>
               </MenuList>

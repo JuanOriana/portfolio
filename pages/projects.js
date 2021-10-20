@@ -16,7 +16,7 @@ const Projects = () => {
             <ProjectGridItem
               id="cs-webpage"
               title="Computer Society Webpage"
-              thumbnail={require("../../public/images/projects/cswebpage.png")}
+              thumbnail={require("../public/images/projects/cswebpage.png")}
             >
               Una pagina que hice para Computer Society.
             </ProjectGridItem>
@@ -25,7 +25,7 @@ const Projects = () => {
             <ProjectGridItem
               id="spotify-age"
               title="Spotify Age Analyzer"
-              thumbnail={require("../../public/images/projects/spotify-age-2.png")}
+              thumbnail={require("../public/images/projects/spotify-age-2.png")}
             >
               A MERN webpage that filters your musical taste by decade using the
               Spotify API.
@@ -35,7 +35,7 @@ const Projects = () => {
             <ProjectGridItem
               id="os"
               title="Custom-OS"
-              thumbnail={require("../../public/images/projects/os.jpeg")}
+              thumbnail={require("../public/images/projects/os.jpeg")}
             >
               A functional operating system made for a 32-bit x86 architecture
               with memory managing, scheduling, pipes, semaphores, and more.
@@ -45,7 +45,7 @@ const Projects = () => {
             <ProjectGridItem
               id="maze"
               title="Pathfinding Visualization"
-              thumbnail={require("../../public/images/projects/maze.jpeg")}
+              thumbnail={require("../public/images/projects/maze.jpeg")}
             >
               A Pygame random maze generator that can find optimal paths using
               diverse algorithms

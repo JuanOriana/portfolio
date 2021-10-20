@@ -23,12 +23,22 @@ const Projects = () => {
           </Section>
           <Section>
             <ProjectGridItem
-              id="maze"
-              title="Pathfinding Visualization"
-              thumbnail={require("../../public/images/projects/maze.jpeg")}
+              id="spotify-age"
+              title="Spotify Age Analyzer"
+              thumbnail={require("../../public/images/projects/spotify-age-2.png")}
             >
-              Un generador de laberintos automatico que permite encontrar el
-              camino utilizando diversos algoritmos de Pathfinding
+              A MERN webpage that filters your musical taste by decade using the
+              Spotify API.
+            </ProjectGridItem>
+          </Section>
+          <Section>
+            <ProjectGridItem
+              id="os"
+              title="Custom-OS"
+              thumbnail={require("../../public/images/projects/os.jpeg")}
+            >
+              A functional operating system made for a 32-bit x86 architecture
+              with memory managing, scheduling, pipes, semaphores, and more.
             </ProjectGridItem>
           </Section>
           <Section>
@@ -37,18 +47,8 @@ const Projects = () => {
               title="Pathfinding Visualization"
               thumbnail={require("../../public/images/projects/maze.jpeg")}
             >
-              Un generador de laberintos automatico que permite encontrar el
-              camino utilizando diversos algoritmos de Pathfinding
-            </ProjectGridItem>
-          </Section>
-          <Section>
-            <ProjectGridItem
-              id="maze"
-              title="Pathfinding Visualization"
-              thumbnail={require("../../public/images/projects/maze.jpeg")}
-            >
-              Un generador de laberintos automatico que permite encontrar el
-              camino utilizando diversos algoritmos de Pathfinding
+              A Pygame random maze generator that can find optimal paths using
+              diverse algorithms
             </ProjectGridItem>
           </Section>
         </SimpleGrid>

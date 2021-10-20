@@ -96,6 +96,16 @@ const Navbar = (props) => {
             Projects
           </LinkItem>
           <LinkItem
+            href="/contact"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+            style={{ gap: 4 }}
+            pl={2}
+          >
+            Contact
+          </LinkItem>
+          <LinkItem
             target="_blank"
             href="https://github.com/JuanOriana/portfolio"
             path={path}
@@ -126,6 +136,9 @@ const Navbar = (props) => {
                 </NextLink>
                 <NextLink href="/projects" passHref>
                   <MenuItem as={Link}>Projects</MenuItem>
+                </NextLink>
+                <NextLink href="/contact" passHref>
+                  <MenuItem as={Link}>Contact</MenuItem>
                 </NextLink>
                 <MenuDivider />
                 <MenuItem

@@ -48,6 +48,8 @@ const Computer = () => {
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(scW, scH);
       renderer.outputEncoding = THREE.sRGBEncoding;
+      renderer.shadowMap.enabled = true;
+      renderer.gammaOutput = true;
       container.appendChild(renderer.domElement);
       setRenderer(renderer);
 
@@ -66,17 +68,19 @@ const Computer = () => {
       camera.lookAt(target);
       setCamera(camera);
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
+      const ambientLight = new THREE.AmbientLight(0xeeccff, 1);
       scene.add(ambientLight);
 
       const controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableZoom = false;
+      controls.enablePan = false;
       controls.autoRotate = true;
       controls.target = target;
       setControls(controls);
 
       loadGLTFModel(scene, "/models/computer/scene.gltf", {
-        receiveShadow: false,
-        castShadow: false,
+        receiveShadow: true,
+        castShadow: true,
       }).then(() => {
         animate();
         setLoading(false);
@@ -87,9 +91,9 @@ const Computer = () => {
       const animate = () => {
         req = requestAnimationFrame(animate);
 
-        frame = frame <= 100 ? frame + 1 : frame;
+        frame = frame <= 65 ? frame + 1 : frame;
 
-        if (frame <= 100) {
+        if (frame <= 65) {
           const p = initialCameraPosition;
           const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
 
@@ -107,7 +111,6 @@ const Computer = () => {
       };
 
       return () => {
-        console.log("unmount");
         cancelAnimationFrame(req);
         renderer.dispose();
       };

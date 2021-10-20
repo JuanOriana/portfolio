@@ -34,7 +34,7 @@ const Page = () => {
               <Heading as="h2" variant="page-title">
                 Juan Pablo Oriana
               </Heading>
-              <Paragraph>Este es un subtitulo descriptivo corto</Paragraph>
+              Technology enthusiast.
             </Box>
             <Box
               flexShrink={1}
@@ -59,13 +59,16 @@ const Page = () => {
               Bio
             </Heading>
             <Paragraph>
-              Esta es la bio de Juan Pablo Oriana. Un estudiante de ingenieria
-              de 3 ano apaasionado por las teconologias web
+              I'm a 3rd year software engineering student at Instituto
+              Tecnologico de Buenos Aires. I have been a passion for web
+              development, design, artificial intelligence and all things
+              innovative. In my free times I love playing music and taking
+              photos.
             </Paragraph>
             <Flex w="100" mt={4} justifyContent="center">
               <NextLink href="/projects">
                 <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-                  My projects
+                  My portfolio
                 </Button>
               </NextLink>
             </Flex>
@@ -77,6 +80,22 @@ const Page = () => {
             <Paragraph>
               Web development - Machine Learning - Maths - Photography - Music
             </Paragraph>
+          </Section>
+          <Section delay={0.5}>
+            <Heading as="h3" variant="section-title">
+              Contact me
+            </Heading>
+            <Paragraph>
+              I'm always on the lookout for new challenges. I would love to be
+              able to work with you!
+            </Paragraph>
+            <Flex w="100" mt={4} justifyContent="center">
+              <NextLink href="/contact">
+                <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+                  Contact me
+                </Button>
+              </NextLink>
+            </Flex>
           </Section>
         </Container>
       </Layout>

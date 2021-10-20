@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Container,
   Box,
@@ -7,12 +7,64 @@ import {
   useColorModeValue,
   Button,
   Flex,
+  Text,
+  Progress,
 } from "@chakra-ui/react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import Section from "../components/Section";
 import Paragraph from "../components/paragraph";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 import Layout from "../components/layouts/Article";
+
+const SkillProgress = ({ skillName, progress }) => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    console.log(inView);
+    if (inView) {
+      controls.start("visible");
+    }
+    if (!inView) {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
+  const progressVariants = {
+    hidden: { width: "0%" },
+    visible: {
+      width: "100%",
+      transition: {
+        duration: 1.2,
+      },
+    },
+  };
+
+  return (
+    <>
+      <Text fontWeight={700} mt={2.5}>
+        {skillName}
+      </Text>
+      <motion.div
+        ref={ref}
+        key={skillName}
+        initial="hidden"
+        animate={controls}
+        variants={progressVariants}
+      >
+        <Progress
+          value={progress}
+          colorScheme="teal"
+          isAnimated="true"
+          hasStripe="true"
+          rounded={10}
+        />
+      </motion.div>
+    </>
+  );
+};
 
 const Page = () => {
   return (
@@ -82,6 +134,19 @@ const Page = () => {
             </Paragraph>
           </Section>
           <Section delay={0.5}>
+            <Heading as="h3" variant="section-title">
+              My skills
+            </Heading>
+            <SkillProgress skillName="Javascript" progress={100} />
+            <SkillProgress skillName="React.js" progress={100} />
+            <SkillProgress skillName="CSS" progress={80} />
+            <SkillProgress skillName="HTML" progress={70} />
+            <SkillProgress skillName="Node.js" progress={50} />
+            <SkillProgress skillName="Express.js" progress={50} />
+            <SkillProgress skillName="Python" progress={75} />
+            <SkillProgress skillName="Java" progress={60} />
+          </Section>
+          <Section delay={0.7}>
             <Heading as="h3" variant="section-title">
               Contact me
             </Heading>

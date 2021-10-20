@@ -4,6 +4,7 @@ import Head from "next/head";
 import { Box, Container } from "@chakra-ui/react";
 import Computer from "../Computer";
 import NoSsr from "../NoSsr";
+import Footer from "../Footer";
 
 const Main = ({ children, router }) => {
   return (
@@ -25,6 +26,7 @@ const Main = ({ children, router }) => {
         </NoSsr>
         {children}
       </Container>
+      <Footer />
     </Box>
   );
 };

@@ -18,7 +18,7 @@ const Projects = () => {
               title="Computer Society Webpage"
               thumbnail={require("../public/images/projects/cswebpage.png")}
             >
-              Una pagina que hice para Computer Society.
+              The homepage for IEEE Computer Society ITBA.
             </ProjectGridItem>
           </Section>
           <Section>

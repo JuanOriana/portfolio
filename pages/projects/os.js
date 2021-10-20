@@ -6,7 +6,7 @@ import {
   Meta,
 } from "../../components/ProjectComponents";
 import P from "../../components/paragraph";
-import Layout from "../../components/layouts/article";
+import Layout from "../../components/layouts/Article";
 import { IoLogoGithub } from "react-icons/io5";
 
 const Project = () => {

@@ -17,7 +17,7 @@ const Project = () => {
           Computer Society Webpage <Badge mt={1}>2021</Badge>
         </ProjectTitle>
         <P>
-          A webpage that serves as a portfolio page for the sutdent organization
+          A webpage that serves as a portfolio page for the student organization
           "IEEE Computer Society ITBA". Can dynamically show upcoming and past
           events from the organization.
         </P>
